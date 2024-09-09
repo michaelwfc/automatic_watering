@@ -1,28 +1,26 @@
 # Aumatic Watering System
 
-![image](./images/aumatic_watering_system_02.jpg)
+![image](./images/aumatic_watering_system_v1.jpg)
 
 This is  Watering System using stm32 MCU to aumaticcally watering the plants by setting the start time and duration
 
-## Features:
+## Features
 
 - Clock built by Timer count function
 - Automatic Watering built by Timer interupt function
-- Support Clock/Watering_time/durition settings
+- Support multiple Clock/Watering_time/durition settings
 
 
-## TODO:
+## TODO
 
 - Support more power pumpy to more plants
 - Support more settings for watering time
-- build a circult with MCU, power, relay etc
+- Build a single circult with MCU, power, relay etc
 - 土壤湿度检测模块[TODO]
-
-
 
 # Hardware
 
-![image](./images/aumatic_watering_system_01.jpg)
+![image](./images/circuit.jpg)
 
 ## Automatic Switch
 
@@ -50,7 +48,7 @@ image from Reference[1]
 - 2分快接弯头，10
 - 2分快三通头，10  
 - 2分球阀，10
-- 进水过滤头， 1
+- 进水过滤头，1
 
 
 # Software
@@ -59,7 +57,7 @@ image from Reference[1]
 
 with the conter function of timer, it support automatic timing with timer counting
 
-## Clock/Watering_time/duration sets:
+## Clock/Watering_time/duration sets
 
 - start_time: set the starting time
 - duration:  set the duration for watering
