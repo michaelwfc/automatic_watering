@@ -70,7 +70,7 @@ with the function of timer interupt, it support automatic watering with interupt
 
 # Reference
 
-[懒人是如何养几百种植物的，当然是自动浇水](https://www.bilibili.com/video/BV1XB42167x3/?spm_id_from=333.337.search-card.all.click&vd_source=b3d4057adb36b9b243dc8d7a6fc41295)
-[Plant Watering Robot with a Raspberry Pi](https://docs.viam.com/tutorials/projects/make-a-plant-watering-robot/)
-[基于树莓派的远程控制自动浇花装置（一）总体架构及硬件设计](https://www.bilibili.com/read/cv19718999/)
-[3种自动浇花方案 DIY、解放双手托管你的花花草草](https://zhuanlan.zhihu.com/p/225813647)
+- [懒人是如何养几百种植物的，当然是自动浇水](https://www.bilibili.com/video/BV1XB42167x3/?spm_id_from=333.337.search-card.all.click&vd_source=b3d4057adb36b9b243dc8d7a6fc41295)
+- [Plant Watering Robot with a Raspberry Pi](https://docs.viam.com/tutorials/projects/make-a-plant-watering-robot/)
+- [基于树莓派的远程控制自动浇花装置（一）总体架构及硬件设计](https://www.bilibili.com/read/cv19718999/)
+- [3种自动浇花方案 DIY、解放双手托管你的花花草草](https://zhuanlan.zhihu.com/p/225813647)
