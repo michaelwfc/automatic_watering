@@ -39,7 +39,7 @@ This is  Watering System using stm32 MCU to aumaticcally watering the plants by 
 
 ## Watering Systme V2[TODO]
 
-![image](./images/watering_system_v2.png)
+![image](./images/watering_system_v2.png)  
 image from Reference[1]
 
 - Pump: diaphragm pump, if you want to support more plants, 1
