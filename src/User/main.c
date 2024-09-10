@@ -12,7 +12,7 @@
 
 
 
-uint16_t clock_value;
+int16_t clock_value;
 // uint16_t relay_duration;
 ClockDef clock;
 
@@ -30,7 +30,7 @@ int main(void)
 	
 	ClockDef watering_time,clock_type;
 	clock = init_clock(8,0,0);
-	watering_time = init_clock(8,0,30);
+	watering_time = init_clock(8,1,0);
 	uint16_t duration=120;
 	
 
@@ -127,6 +127,21 @@ int main(void)
 			}
 			// get the value from external interput by keys
 			clock_value = get_value();
+			
+			if((mode==1||mode==2)&&(period==0))
+			{
+				if(clock_value >23)clock_value=0;
+				else if (clock_value<0) clock_value=23;
+			}
+			else if(mode==1||mode==2)
+			{
+				if(clock_value >59)clock_value=0;
+				else if (clock_value<0) clock_value=59;
+			}
+			else
+			{
+				if (clock_value<0) clock_value=0;	
+			}
 			
 	
 			switch (mode)

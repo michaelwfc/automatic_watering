@@ -7,7 +7,7 @@ uint16_t INCREASE_KEY = GPIO_Pin_2; // RCC_APB2Periph_GPIOA
 uint16_t DECREASE_KEY = GPIO_Pin_14; // RCC_APB2Periph_GPIOC
 
 // Use extern to declare the global variable defined in key.c
-extern uint16_t clock_value;  
+extern int16_t clock_value;  
 
 // Define the global variable
 static uint16_t mode=0,period=0;
@@ -121,7 +121,7 @@ void  EXTI15_10_IRQHandler(void)
 			Delay_ms(20);
 			clock_value --;
 		}
-		if(clock_value<0)clock_value=0;
+		//if(clock_value<0)clock_value=0;
 	
 		EXTI_ClearITPendingBit(EXTI_Line14); // 清除中断状态
 	}
@@ -182,7 +182,7 @@ void  EXTI2_IRQHandler(void)
 }
 
 
-uint16_t get_value(void)
+int16_t get_value(void)
 {
 		return clock_value;
 }
