@@ -28,10 +28,12 @@ int main(void)
 	
 	uint16_t mode,pre_mode, period, pre_period, is_runing;
 	
+	
+	
 	ClockDef watering_time,clock_type;
 	clock = init_clock(8,0,0);
 	watering_time = init_clock(8,1,0);
-	uint16_t duration=120;
+	uint16_t duration= 60;
 	
 
 	while(1)
@@ -80,6 +82,16 @@ int main(void)
 				OLED_ShowString(3,1,"Closed");
 			}
 
+		}
+		else if(mode==4){
+			// start the relayif mode 4
+			OLED_ShowString(3,1,"Open  ");
+			set_relay_control_high_volt();
+		}
+		else if(mode==5){
+			// stop the relay and set count and relay_duration back to 0
+			OLED_ShowString(3,1,"Closed");
+			set_relay_control_low_volt();
 		}
 		else{ // enter into the setting modes
 			
@@ -179,12 +191,11 @@ int main(void)
 					show_clock_intevally(watering_time,2,1,period);
 					break;
 				case 3: 
+					// increate or decrease duration value by DURATION_INTERVAL
 					duration = clock_value;
 					show_duration_intevally(duration,2,10);
 					break;
 			}
-			
-
 			
 			pre_mode =mode;
 			pre_period =period;

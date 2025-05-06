@@ -12,7 +12,8 @@ extern int16_t clock_value;
 // Define the global variable
 static uint16_t mode=0,period=0;
 
-
+static uint16_t MAX_MODE= 5;
+uint16_t DURATION_INTERVAL =5;
 
 void Keys_GPIO_Init(void)
 {
@@ -107,7 +108,7 @@ void  EXTI15_10_IRQHandler(void)
 			mode ++;
 		}
 		//mode= 0: do noththing, 1: set clock, 2: set watering time,  3: set duration 
-		if(mode>3)mode=0;
+		if(mode > MAX_MODE)mode=0;
 		EXTI_ClearITPendingBit(EXTI_Line10); // 清除中断状态
 	}
 	
@@ -119,7 +120,13 @@ void  EXTI15_10_IRQHandler(void)
 			Delay_ms(20);
 			while (GPIO_ReadInputDataBit(GPIOC, DECREASE_KEY) == 0);
 			Delay_ms(20);
-			clock_value --;
+			
+			// for mode 3 of setting the duration
+			if(mode==3){
+					clock_value -= DURATION_INTERVAL;
+			}
+			else{
+			clock_value --;}
 		}
 		//if(clock_value<0)clock_value=0;
 	
@@ -174,7 +181,12 @@ void  EXTI2_IRQHandler(void)
 			Delay_ms(20);
 			while (GPIO_ReadInputDataBit(GPIOA, INCREASE_KEY) == 0);
 			Delay_ms(20);
-			clock_value ++;
+			// for mode 3 of setting the duration
+			if(mode==3){
+					clock_value += DURATION_INTERVAL;
+			}
+			else{
+			clock_value ++;}
 		}
 	
 		EXTI_ClearITPendingBit(EXTI_Line2); // 清除中断状态
